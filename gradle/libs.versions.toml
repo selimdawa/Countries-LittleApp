@@ -26,7 +26,7 @@ roomCompiler = "2.8.4"
 rxjava = "2.1.1"
 #noinspection GradleDependency
 swiperefreshlayout = "1.2.0-alpha01"
-navigation = "2.8.9"
+navigation = "2.9.8"
 
 [libraries]
 adapter-rxjava2 = { module = "com.squareup.retrofit2:adapter-rxjava2", version.ref = "retrofit" }
