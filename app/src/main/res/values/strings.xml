@@ -1,3 +1,24 @@
 <resources>
-    <string name="app_name">Countries-LittleApp</string>
+    <string name="app_name">Countries - Little App</string>
+    //Theme
+    <string name="basic_theme">Basic Theme</string>
+    <string name="sec_theme">Sec Theme</string>
+    //Country Details
+    <string name="country_language">Country Language :</string>
+    <string name="country_name">Country Name :</string>
+    <string name="country_capital">Country Capital :</string>
+    <string name="country_region">Country Region :</string>
+    <string name="country_currency">Country Currency :</string>
+    <string name="what_would_you_like_to_eat">What would you like to eat?</string>
+    <string name="instructions">Instructions :</string>
+    <string name="over_popular_items">Over popular items</string>
+    <string name="categories">Categories</string>
+    <string name="everything">Everything</string>
+    <string name="top_articles">Top Articles</string>
+    <string name="character">Character</string>
+    <string name="location">Location</string>
+    <string name="episode">Episode</string>
+    <string name="last_know_location">Last know location :</string>
+    <string name="gender">Gender :</string>
+    <string name="error">Error!</string>
 </resources>
