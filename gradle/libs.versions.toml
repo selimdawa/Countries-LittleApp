@@ -22,7 +22,8 @@ legacySupportV4 = "1.0.0"
 retrofit = "3.0.0"
 roomRuntime = "2.8.4"
 roomCompiler = "2.8.4"
-rxjava = "2.2.21"
+#noinspection NewerVersionAvailable
+rxjava = "2.1.1"
 #noinspection GradleDependency
 swiperefreshlayout = "1.2.0-alpha01"
 navigation = "2.8.9"
