@@ -27,6 +27,7 @@ rxjava = "2.1.1"
 #noinspection GradleDependency
 swiperefreshlayout = "1.2.0-alpha01"
 navigation = "2.9.8"
+ksp = "2.0.0-1.0.21"
 
 [libraries]
 adapter-rxjava2 = { module = "com.squareup.retrofit2:adapter-rxjava2", version.ref = "retrofit" }
@@ -66,3 +67,4 @@ rxjava = { module = "io.reactivex.rxjava2:rxjava", version.ref = "rxjava" }
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 navigation-safeargs-kotlin = { id = "androidx.navigation.safeargs.kotlin", version.ref = "navigation" }
+ksp-processor = { id = "com.google.devtools.ksp", version.ref = "ksp" }
