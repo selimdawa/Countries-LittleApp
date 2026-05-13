@@ -16,7 +16,6 @@ kotlinxCoroutinesAndroid = "1.11.0"
 lifecycleViewmodelKtx = "2.10.0"
 material = "1.13.0"
 constraintlayout = "2.2.1"
-navigation = "2.9.8"
 paletteKtx = "1.0.0"
 preferenceKtx = "1.2.1"
 legacySupportV4 = "1.0.0"
@@ -26,6 +25,7 @@ roomCompiler = "2.8.4"
 rxjava = "2.2.21"
 #noinspection GradleDependency
 swiperefreshlayout = "1.2.0-alpha01"
+navigation = "2.8.9"
 
 [libraries]
 adapter-rxjava2 = { module = "com.squareup.retrofit2:adapter-rxjava2", version.ref = "retrofit" }
@@ -64,3 +64,4 @@ rxjava = { module = "io.reactivex.rxjava2:rxjava", version.ref = "rxjava" }
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+navigation-safeargs-kotlin = { id = "androidx.navigation.safeargs.kotlin", version.ref = "navigation" }
