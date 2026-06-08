@@ -5,6 +5,7 @@ cardview = "1.0.0"
 coreKtx = "1.18.0"
 fragmentKtx = "1.8.9"
 glide = "5.0.7"
+glideKsp = "5.0.7"
 glideTransformations = "4.3.0"
 kotlin = "2.3.21"
 junit = "4.13.2"
@@ -45,7 +46,7 @@ androidx-room-room-compiler = { module = "androidx.room:room-compiler", version.
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomCompiler" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
 androidx-swiperefreshlayout = { module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "swiperefreshlayout" }
-compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glide" }
+glide-ksp = { module = "com.github.bumptech.glide:ksp", version.ref = "glideKsp" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 glide-transformations = { module = "jp.wasabeef:glide-transformations", version.ref = "glideTransformations" }

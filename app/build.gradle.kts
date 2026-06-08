@@ -3,7 +3,6 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.navigation.safeargs.kotlin)
     alias(libs.plugins.ksp.processor)
-    id("kotlin-kapt")
 }
 
 android {
@@ -62,6 +61,10 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.legacy.support.v4)
     implementation(libs.androidx.cardview)
+    //Image
+    implementation(libs.glide)                          //Glide Image
+    ksp(libs.glide.ksp)                                 //Glide Compiler
+    implementation(libs.glide.transformations)                            //Glide Blur
     //Lifecycle
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.livedata.ktx)
@@ -70,7 +73,7 @@ dependencies {
     annotationProcessor(libs.androidx.room.compiler)
     ksp(libs.androidx.room.room.compiler)
     implementation(libs.androidx.room.ktx)
-   //Kotlin Coroutines
+    //Kotlin Coroutines
     implementation(libs.kotlinx.coroutines.core)    //Core
     implementation(libs.kotlinx.coroutines.android)  //Android
     //Navigation
@@ -84,10 +87,6 @@ dependencies {
     implementation(libs.rxjava)
     implementation(libs.rxandroid)
     //Other's
-    implementation(libs.glide)                                            //Glide image
-    //noinspection KaptUsageInsteadOfKsp
-    kapt(libs.compiler)                                                   //Glide compiler
-    implementation(libs.glide.transformations)                            //Glide Blur
     implementation(libs.androidx.palette.ktx)
     implementation(libs.androidx.swiperefreshlayout)
 }
