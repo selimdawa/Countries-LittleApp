@@ -2,7 +2,7 @@
 activityKtx = "1.13.0"
 agp = "9.2.1"
 cardview = "1.0.0"
-coreKtx = "1.18.0"
+coreKtx = "1.19.0"
 fragmentKtx = "1.8.9"
 glide = "5.0.7"
 glideKsp = "5.0.7"
