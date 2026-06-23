@@ -4,7 +4,6 @@ agp = "9.2.1"
 coreKtx = "1.19.0"
 fragmentKtx = "1.8.9"
 glide = "5.0.7"
-glideKsp = "5.0.7"
 glideTransformations = "4.3.0"
 junit = "4.13.2"
 junitVersion = "1.3.0"
@@ -40,7 +39,6 @@ androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 rxandroid = { group = "io.reactivex.rxjava3", name = "rxandroid", version.ref = "rxandroid3" }
 rxjava = { group = "io.reactivex.rxjava3", name = "rxjava", version.ref = "rxjava3" }
 androidx-swiperefreshlayout = { module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "swiperefreshlayout" }
-glide-ksp = { module = "com.github.bumptech.glide:ksp", version.ref = "glideKsp" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 glide-transformations = { module = "jp.wasabeef:glide-transformations", version.ref = "glideTransformations" }

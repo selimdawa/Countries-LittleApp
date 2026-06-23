@@ -53,7 +53,6 @@ dependencies {
     implementation(libs.material)
     //Image
     implementation(libs.glide)                          //Glide Image
-    ksp(libs.glide.ksp)                                 //Glide Compiler
     implementation(libs.glide.transformations)                            //Glide Blur
     //Lifecycle
     implementation(libs.androidx.lifecycle.viewmodel.ktx)

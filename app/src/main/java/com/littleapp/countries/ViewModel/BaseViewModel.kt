@@ -16,7 +16,6 @@ abstract class BaseViewModel(application: Application) : AndroidViewModel(applic
         get() = job + Dispatchers.Main
 
     override fun onCleared() {
-        super.onCleared()
         job.cancel()
     }
 }

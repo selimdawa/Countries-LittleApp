@@ -1,12 +1,10 @@
 package com.littleapp.countries.Adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.littleapp.countries.Fragments.DashboardFragmentDirections
 import com.littleapp.countries.Model.Country
@@ -14,65 +12,45 @@ import com.littleapp.countries.Util.downloadFromUrl
 import com.littleapp.countries.Util.placeholderProgressBar
 import com.littleapp.countries.databinding.ItemCountryBinding
 
-class CountryAdapter(val countryList: ArrayList<Country>) :
-    RecyclerView.Adapter<CountryAdapter.ViewHolder>() {
-
-    private var binding: ItemCountryBinding? = null
+class CountryAdapter : ListAdapter<Country, CountryAdapter.ViewHolder>(CountryDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        binding = ItemCountryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ViewHolder(binding!!.root)
+        val binding = ItemCountryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val model: Country = countryList[position]
-        val c_Name: String = model.countryName!!
-        val d_Name: String = model.countryRegion!!
+        val model = getItem(position)
+        val binding = holder.binding
 
-        holder.cName.text = c_Name
-        holder.dName.text = d_Name
+        binding.cName.text = model.countryName
+        binding.dName.text = model.countryRegion
 
-        holder.item.setOnClickListener {
-            val action =
-                DashboardFragmentDirections.actionDashboardFragmentToDetailFragment(countryList[position].uuid)
-
+        binding.item.setOnClickListener {
+            val action = DashboardFragmentDirections.actionDashboardFragmentToDetailFragment(model.uuid)
             Navigation.findNavController(it).navigate(action)
         }
 
-        holder.imageName.downloadFromUrl(
-            false, countryList[position].imageURL,
-            placeholderProgressBar(holder.item.context)
+        binding.imageName.downloadFromUrl(
+            false, model.imageURL,
+            placeholderProgressBar(binding.item.context)
         )
 
-        holder.imageBlur.downloadFromUrl(
-            true, countryList[position].imageURL,
-            placeholderProgressBar(holder.item.context)
+        binding.imageBlur.downloadFromUrl(
+            true, model.imageURL,
+            placeholderProgressBar(binding.item.context)
         )
     }
 
-    override fun getItemCount(): Int {
-        return countryList.size
-    }
+    inner class ViewHolder(val binding: ItemCountryBinding) : RecyclerView.ViewHolder(binding.root)
 
-    fun updateCountryList(newCountryList: List<Country>) {
-        countryList.clear()
-        countryList.addAll(newCountryList)
-        notifyDataSetChanged()
-    }
+    class CountryDiffCallback : DiffUtil.ItemCallback<Country>() {
+        override fun areItemsTheSame(oldItem: Country, newItem: Country): Boolean {
+            return oldItem.uuid == newItem.uuid
+        }
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var cName: TextView
-        var dName: TextView
-        var imageName: ImageView
-        var imageBlur: ImageView
-        var item: LinearLayout
-
-        init {
-            cName = binding!!.cName
-            dName = binding!!.dName
-            imageName = binding!!.imageName
-            imageBlur = binding!!.imageBlur
-            item = binding!!.item
+        override fun areContentsTheSame(oldItem: Country, newItem: Country): Boolean {
+            return oldItem == newItem
         }
     }
 }

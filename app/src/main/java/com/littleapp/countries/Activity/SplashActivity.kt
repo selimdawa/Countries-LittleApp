@@ -22,8 +22,7 @@ class SplashActivity : AppCompatActivity() {
         THEME.setThemeOfApp(context)
         super.onCreate(savedInstanceState)
         binding = ActivitySplashBinding.inflate(layoutInflater)
-        val view = binding!!.root
-        setContentView(view)
+        setContentView(binding!!.root)
 
         Handler(Looper.getMainLooper()).postDelayed({ launch() }, time_final.toLong())
     }
@@ -31,6 +30,11 @@ class SplashActivity : AppCompatActivity() {
     private fun launch() {
         VOID.Intent1(context, CLASS.MAIN)
         finish()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        binding = null
     }
 
     companion object {
