@@ -7,10 +7,10 @@ import com.littleapp.countries.Model.Country
 import com.littleapp.countries.Service.CountryAPIService
 import com.littleapp.countries.Service.CountryDatabase
 import com.littleapp.countries.Util.CustomSharedPreferences
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.observers.DisposableSingleObserver
-import io.reactivex.schedulers.Schedulers
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.disposables.CompositeDisposable
+import io.reactivex.rxjava3.observers.DisposableSingleObserver
+import io.reactivex.rxjava3.schedulers.Schedulers
 import kotlinx.coroutines.launch
 
 class DashboardViewModel(application: Application) : BaseViewModel(application) {

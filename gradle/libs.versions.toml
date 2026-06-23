@@ -20,14 +20,14 @@ paletteKtx = "1.0.0"
 preferenceKtx = "1.2.1"
 retrofit = "3.0.0"
 room = "2.8.4"
-rxandroid2 = "2.1.1"
-rxjava2 = "2.2.21"
+rxandroid3 = "3.0.2"
+rxjava3 = "3.1.12"
 swiperefreshlayout = "1.2.0"
 navigation = "2.9.8"
 ksp = "2.3.8"
 
 [libraries]
-adapter-rxjava2 = { module = "com.squareup.retrofit2:adapter-rxjava2", version.ref = "retrofit" }
+adapter-rxjava3 = { module = "com.squareup.retrofit2:adapter-rxjava3", version.ref = "retrofit" }
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activityKtx" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentKtx" }
@@ -38,8 +38,8 @@ androidx-preference-ktx = { module = "androidx.preference:preference-ktx", versi
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
-rxandroid = { group = "io.reactivex.rxjava2", name = "rxandroid", version.ref = "rxandroid2" }
-rxjava = { group = "io.reactivex.rxjava2", name = "rxjava", version.ref = "rxjava2" }
+rxandroid = { group = "io.reactivex.rxjava3", name = "rxandroid", version.ref = "rxandroid3" }
+rxjava = { group = "io.reactivex.rxjava3", name = "rxjava", version.ref = "rxjava3" }
 androidx-swiperefreshlayout = { module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "swiperefreshlayout" }
 glide-ksp = { module = "com.github.bumptech.glide:ksp", version.ref = "glideKsp" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }

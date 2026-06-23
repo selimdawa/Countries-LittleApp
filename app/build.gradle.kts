@@ -76,7 +76,7 @@ dependencies {
     //Retrofit
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
-    implementation(libs.adapter.rxjava2)
+    implementation(libs.adapter.rxjava3)
     //RxJava
     implementation(libs.rxandroid)
     implementation(libs.rxjava)
