@@ -1,6 +1,5 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.navigation.safeargs.kotlin)
     alias(libs.plugins.ksp.processor)
 }
@@ -57,8 +56,6 @@ dependencies {
     //Layout
     implementation(libs.androidx.constraintlayout)
     implementation(libs.material)
-    implementation(libs.androidx.legacy.support.v4)
-    implementation(libs.androidx.cardview)
     //Image
     implementation(libs.glide)                          //Glide Image
     ksp(libs.glide.ksp)                                 //Glide Compiler
@@ -68,9 +65,8 @@ dependencies {
     implementation(libs.androidx.lifecycle.livedata.ktx)
     //Room
     implementation(libs.androidx.room.runtime)
-    annotationProcessor(libs.androidx.room.compiler)
-    ksp(libs.androidx.room.room.compiler)
     implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
     //Kotlin Coroutines
     implementation(libs.kotlinx.coroutines.core)    //Core
     implementation(libs.kotlinx.coroutines.android)  //Android
@@ -82,9 +78,10 @@ dependencies {
     implementation(libs.converter.gson)
     implementation(libs.adapter.rxjava2)
     //RxJava
-    implementation(libs.rxjava)
     implementation(libs.rxandroid)
+    implementation(libs.rxjava)
     //Other's
     implementation(libs.androidx.palette.ktx)
     implementation(libs.androidx.swiperefreshlayout)
+    ksp(libs.kotlin.metadata.jvm)                       //Kotlin
 }
