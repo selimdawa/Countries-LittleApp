@@ -33,11 +33,6 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    kotlin {
-        compilerOptions {
-            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
-        }
-    }
     buildFeatures {
         dataBinding = true
         viewBinding = true
@@ -83,5 +78,4 @@ dependencies {
     //Other's
     implementation(libs.androidx.palette.ktx)
     implementation(libs.androidx.swiperefreshlayout)
-    ksp(libs.kotlin.metadata.jvm)                       //Kotlin
 }
