@@ -6,7 +6,7 @@ import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.littleapp.countries.R
-import com.littleapp.countries.Unit.VOID
+import com.littleapp.countries.utils.VOID
 
 fun ImageView.downloadFromUrl(
     blur: Boolean?,

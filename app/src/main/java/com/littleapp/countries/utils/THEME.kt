@@ -1,4 +1,4 @@
-package com.littleapp.countries.Unit
+package com.littleapp.countries.utils
 
 import android.content.Context
 import androidx.preference.PreferenceManager

@@ -15,29 +15,23 @@ lifecycleViewmodelKtx = "2.11.0"
 material = "1.14.0"
 constraintlayout = "2.2.1"
 paletteKtx = "1.0.0"
-preferenceKtx = "1.2.1"
 retrofit = "3.0.0"
 room = "2.8.4"
-rxandroid3 = "3.0.2"
-rxjava3 = "3.1.12"
 swiperefreshlayout = "1.2.0"
 navigation = "2.9.8"
 ksp = "2.3.8"
+preferenceKtx = "1.2.1"
 
 [libraries]
-adapter-rxjava3 = { module = "com.squareup.retrofit2:adapter-rxjava3", version.ref = "retrofit" }
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activityKtx" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentKtx" }
 androidx-lifecycle-livedata-ktx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycleViewmodelKtx" }
 androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
 androidx-palette-ktx = { module = "androidx.palette:palette-ktx", version.ref = "paletteKtx" }
-androidx-preference-ktx = { module = "androidx.preference:preference-ktx", version.ref = "preferenceKtx" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
-rxandroid = { group = "io.reactivex.rxjava3", name = "rxandroid", version.ref = "rxandroid3" }
-rxjava = { group = "io.reactivex.rxjava3", name = "rxjava", version.ref = "rxjava3" }
 androidx-swiperefreshlayout = { module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "swiperefreshlayout" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
@@ -53,6 +47,7 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigation" }
 androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+androidx-preference-ktx = { module = "androidx.preference:preference-ktx", version.ref = "preferenceKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

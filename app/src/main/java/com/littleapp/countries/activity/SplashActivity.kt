@@ -1,13 +1,13 @@
-package com.littleapp.countries.Activity
+package com.littleapp.countries.activity
 
 import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
-import com.littleapp.countries.Unit.CLASS
-import com.littleapp.countries.Unit.THEME
-import com.littleapp.countries.Unit.VOID
+import com.littleapp.countries.utils.CLASS
+import com.littleapp.countries.utils.THEME
+import com.littleapp.countries.utils.VOID
 import com.littleapp.countries.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {

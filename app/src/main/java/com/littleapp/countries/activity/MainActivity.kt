@@ -1,10 +1,10 @@
-package com.littleapp.countries.Activity
+package com.littleapp.countries.activity
 
 import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.littleapp.countries.databinding.ActivityMainBinding
-import com.littleapp.countries.Unit.THEME
+import com.littleapp.countries.utils.THEME
 
 class MainActivity : AppCompatActivity() {
 

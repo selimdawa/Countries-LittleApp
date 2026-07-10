@@ -1,8 +1,9 @@
-package com.littleapp.countries.Unit
+package com.littleapp.countries.utils
 
 import android.content.Context
 import android.content.Intent
 import android.widget.ImageView
+import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.littleapp.countries.R
@@ -18,7 +19,7 @@ object VOID {
         try {
             Glide.with(context!!).load(Url).placeholder(R.color.image_profile)
                 .apply(RequestOptions.bitmapTransform(BlurTransformation(level))).into(Image)
-        } catch (e: Exception) {
+        } catch (_: Exception) {
             Image.setImageResource(R.color.image_profile)
         }
     }

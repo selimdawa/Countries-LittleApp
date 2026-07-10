@@ -1,6 +1,6 @@
-package com.littleapp.countries.Unit
+package com.littleapp.countries.utils
 
-import com.littleapp.countries.Activity.*
+import com.littleapp.countries.activity.*
 
 object CLASS {
     val MAIN: Class<*> = MainActivity::class.java

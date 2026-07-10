@@ -27,22 +27,21 @@ class CountryAdapter : ListAdapter<Country, CountryAdapter.ViewHolder>(CountryDi
         binding.dName.text = model.countryRegion
 
         binding.item.setOnClickListener {
-            val action = DashboardFragmentDirections.actionDashboardFragmentToDetailFragment(model.uuid)
+            val action =
+                DashboardFragmentDirections.actionDashboardFragmentToDetailFragment(model.uuid)
             Navigation.findNavController(it).navigate(action)
         }
 
         binding.imageName.downloadFromUrl(
-            false, model.imageURL,
-            placeholderProgressBar(binding.item.context)
+            false, model.imageURL, placeholderProgressBar(binding.item.context)
         )
 
         binding.imageBlur.downloadFromUrl(
-            true, model.imageURL,
-            placeholderProgressBar(binding.item.context)
+            true, model.imageURL, placeholderProgressBar(binding.item.context)
         )
     }
 
-    inner class ViewHolder(val binding: ItemCountryBinding) : RecyclerView.ViewHolder(binding.root)
+    class ViewHolder(val binding: ItemCountryBinding) : RecyclerView.ViewHolder(binding.root)
 
     class CountryDiffCallback : DiffUtil.ItemCallback<Country>() {
         override fun areItemsTheSame(oldItem: Country, newItem: Country): Boolean {

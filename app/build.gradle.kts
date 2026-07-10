@@ -70,10 +70,6 @@ dependencies {
     //Retrofit
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
-    implementation(libs.adapter.rxjava3)
-    //RxJava
-    implementation(libs.rxandroid)
-    implementation(libs.rxjava)
     //Other's
     implementation(libs.androidx.palette.ktx)
     implementation(libs.androidx.swiperefreshlayout)

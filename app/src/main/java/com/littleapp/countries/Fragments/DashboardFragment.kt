@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.littleapp.countries.Unit.DATA
+import com.littleapp.countries.utils.DATA
 import com.littleapp.countries.Adapter.CountryAdapter
 import com.littleapp.countries.ViewModel.DashboardViewModel
 import com.littleapp.countries.databinding.FragmentDashboardBinding
