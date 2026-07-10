@@ -1,7 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.google.ksp)
+    alias(libs.plugins.dagger.hilt.android)
     alias(libs.plugins.navigation.safeargs.kotlin)
-    alias(libs.plugins.ksp.processor)
 }
 
 android {
@@ -33,7 +34,6 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
     buildFeatures {
-        dataBinding = true
         viewBinding = true
     }
 }
@@ -56,13 +56,17 @@ dependencies {
     //Lifecycle
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.livedata.ktx)
+    //Dagger - Hilt
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.android.compiler)
+    implementation(libs.hilt.navigation.fragment)
     //Room
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
     //Kotlin Coroutines
-    implementation(libs.kotlinx.coroutines.core)    //Core
-    implementation(libs.kotlinx.coroutines.android)  //Android
+    implementation(libs.kotlinx.coroutines.core)   //Core
+    implementation(libs.kotlinx.coroutines.android) //Android
     //Navigation
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
