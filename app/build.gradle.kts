@@ -62,7 +62,6 @@ dependencies {
     implementation(libs.hilt.navigation.fragment)
     //Room
     implementation(libs.androidx.room.runtime)
-    implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
     //Kotlin Coroutines
     implementation(libs.kotlinx.coroutines.core)   //Core
