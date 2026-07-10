@@ -1,4 +1,4 @@
-package com.littleapp.countries.Model
+package com.littleapp.countries.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

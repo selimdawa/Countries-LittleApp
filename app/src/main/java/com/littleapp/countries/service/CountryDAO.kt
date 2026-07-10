@@ -1,9 +1,9 @@
-package com.littleapp.countries.Service
+package com.littleapp.countries.service
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.littleapp.countries.Model.Country
+import com.littleapp.countries.model.Country
 
 @Dao
 interface CountryDAO {

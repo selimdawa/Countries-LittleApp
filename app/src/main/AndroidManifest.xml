@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -14,8 +14,7 @@
         android:supportsRtl="false"
         android:theme="@style/Base.Theme.MainApp"
         android:usesCleartextTraffic="true"
-        tools:replace="android:supportsRtl"
-        tools:targetApi="31">
+        tools:replace="android:supportsRtl">
         <activity
             android:name=".activity.SplashActivity"
             android:exported="true"

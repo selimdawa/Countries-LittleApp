@@ -1,10 +1,10 @@
-package com.littleapp.countries.Service
+package com.littleapp.countries.service
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.littleapp.countries.Model.Country
+import com.littleapp.countries.model.Country
 
 @Database(entities = [Country::class], version = 1)
 abstract class CountryDatabase : RoomDatabase() {

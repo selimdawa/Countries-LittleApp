@@ -1,4 +1,4 @@
-package com.littleapp.countries.Adapter
+package com.littleapp.countries.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,11 +6,11 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.littleapp.countries.Fragments.DashboardFragmentDirections
-import com.littleapp.countries.Model.Country
-import com.littleapp.countries.Util.downloadFromUrl
-import com.littleapp.countries.Util.placeholderProgressBar
 import com.littleapp.countries.databinding.ItemCountryBinding
+import com.littleapp.countries.fragments.DashboardFragmentDirections
+import com.littleapp.countries.model.Country
+import com.littleapp.countries.utils.VOID.downloadFromUrl
+import com.littleapp.countries.utils.VOID.placeholderProgressBar
 
 class CountryAdapter : ListAdapter<Country, CountryAdapter.ViewHolder>(CountryDiffCallback()) {
 

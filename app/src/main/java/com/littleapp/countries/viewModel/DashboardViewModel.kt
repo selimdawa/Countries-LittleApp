@@ -1,14 +1,14 @@
-package com.littleapp.countries.ViewModel
+package com.littleapp.countries.viewModel
 
 import android.app.Application
 import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.littleapp.countries.Model.Country
-import com.littleapp.countries.Service.CountryAPIService
-import com.littleapp.countries.Service.CountryDatabase
-import com.littleapp.countries.Util.CustomSharedPreferences
+import com.littleapp.countries.model.Country
+import com.littleapp.countries.service.CountryAPIService
+import com.littleapp.countries.service.CountryDatabase
+import com.littleapp.countries.utils.CustomDataStore
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -17,7 +17,7 @@ class DashboardViewModel(application: Application) : AndroidViewModel(applicatio
 
     private val countryApiService = CountryAPIService()
 
-    private var customSharedPreferences = CustomSharedPreferences(getApplication())
+    private var customSharedPreferences = CustomDataStore(getApplication())
     private var refreshTime = 10 * 60 * 1000 * 1000 * 1000L
 
     val countries = MutableLiveData<List<Country>>()
@@ -25,11 +25,13 @@ class DashboardViewModel(application: Application) : AndroidViewModel(applicatio
     val countryLoading = MutableLiveData<Boolean>()
 
     fun refreshData() {
-        val updateTime = customSharedPreferences.getTime()
-        if (updateTime != null && updateTime != 0L && System.nanoTime() - updateTime < refreshTime) {
-            getDataFromSQLite()
-        } else {
-            getDataFromAPI()
+        viewModelScope.launch {
+            val updateTime = customSharedPreferences.getTimeSync()
+            if (updateTime != 0L && System.nanoTime() - updateTime < refreshTime) {
+                getDataFromSQLite()
+            } else {
+                getDataFromAPI()
+            }
         }
     }
 

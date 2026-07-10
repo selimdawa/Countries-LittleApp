@@ -1,6 +1,6 @@
-package com.littleapp.countries.Service
+package com.littleapp.countries.service
 
-import com.littleapp.countries.Model.Country
+import com.littleapp.countries.model.Country
 import com.littleapp.countries.utils.DATA
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

@@ -24,8 +24,7 @@ android {
         release {
             isMinifyEnabled = false
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
         }
     }
@@ -42,7 +41,7 @@ android {
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    implementation(libs.androidx.activity.ktx)              //Kotlin Activity
+    implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.fragment.ktx)
     implementation(libs.androidx.preference.ktx)                          //Shared Preference
     testImplementation(libs.junit)
@@ -73,4 +72,5 @@ dependencies {
     //Other's
     implementation(libs.androidx.palette.ktx)
     implementation(libs.androidx.swiperefreshlayout)
+    implementation(libs.datastore.preferences)   //DataStore
 }

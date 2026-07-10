@@ -1,4 +1,4 @@
-package com.littleapp.countries.Fragments
+package com.littleapp.countries.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,11 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.littleapp.countries.Util.downloadFromUrl
-import com.littleapp.countries.Util.placeholderProgressBar
-import com.littleapp.countries.ViewModel.DetailViewModel
 import com.littleapp.countries.databinding.FragmentDetailBinding
 import com.littleapp.countries.utils.DATA
+import com.littleapp.countries.utils.VOID.downloadFromUrl
+import com.littleapp.countries.utils.VOID.placeholderProgressBar
+import com.littleapp.countries.viewModel.DetailViewModel
 
 class DetailFragment : Fragment() {
 

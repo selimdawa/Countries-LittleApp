@@ -1,11 +1,11 @@
-package com.littleapp.countries.ViewModel
+package com.littleapp.countries.viewModel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.littleapp.countries.Model.Country
-import com.littleapp.countries.Service.CountryDatabase
+import com.littleapp.countries.model.Country
+import com.littleapp.countries.service.CountryDatabase
 import kotlinx.coroutines.launch
 
 class DetailViewModel(application: Application) : AndroidViewModel(application) {
