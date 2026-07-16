@@ -41,8 +41,6 @@ android {
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    implementation(libs.androidx.activity.ktx)
-    implementation(libs.androidx.fragment.ktx)
     implementation(libs.androidx.preference.ktx)                          //Shared Preference
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -72,7 +70,6 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
     //Other's
-    implementation(libs.androidx.palette.ktx)
     implementation(libs.androidx.swiperefreshlayout)
     implementation(libs.datastore.preferences)   //DataStore
 }

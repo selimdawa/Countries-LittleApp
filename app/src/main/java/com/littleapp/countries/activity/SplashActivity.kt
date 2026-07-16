@@ -6,7 +6,9 @@ import com.littleapp.countries.databinding.ActivitySplashBinding
 import com.littleapp.countries.utils.THEME
 import com.littleapp.countries.utils.launchDelayed
 import com.littleapp.countries.utils.openActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SplashActivity : AppCompatActivity() {
 
     private var binding: ActivitySplashBinding? = null

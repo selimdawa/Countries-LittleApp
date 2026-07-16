@@ -5,18 +5,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
+import com.littleapp.countries.R
 import com.littleapp.countries.databinding.FragmentDetailBinding
 import com.littleapp.countries.utils.DATA
 import com.littleapp.countries.utils.downloadFromUrl
 import com.littleapp.countries.utils.placeholderProgressBar
 import com.littleapp.countries.viewModel.DetailViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DetailFragment : Fragment() {
 
     private var _binding: FragmentDetailBinding? = null
     private val binding get() = _binding!!
-    private lateinit var viewModel: DetailViewModel
+    private val viewModel: DetailViewModel by hiltNavGraphViewModels(R.id.nav_graph)
     private var countryUuid = 0
 
     override fun onCreateView(
@@ -34,7 +37,6 @@ class DetailFragment : Fragment() {
             countryUuid = DetailFragmentArgs.fromBundle(it).countryId
         }
 
-        viewModel = ViewModelProvider(this)[DetailViewModel::class.java]
         viewModel.getDataFromRoom(countryUuid)
 
         binding.toolbar.nameSpace.text = DATA.COUNTRY_DETAILS
