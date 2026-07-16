@@ -4,52 +4,70 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.littleapp.countries.databinding.ItemCountryBinding
 import com.littleapp.countries.fragments.DashboardFragmentDirections
 import com.littleapp.countries.model.Country
-import com.littleapp.countries.utils.VOID.downloadFromUrl
-import com.littleapp.countries.utils.VOID.placeholderProgressBar
+import com.littleapp.countries.utils.downloadFromUrl
+import com.littleapp.countries.utils.placeholderProgressBar
 
-class CountryAdapter : ListAdapter<Country, CountryAdapter.ViewHolder>(CountryDiffCallback()) {
+class CountryAdapter(private val countryList: ArrayList<Country>) :
+    RecyclerView.Adapter<CountryViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CountryViewHolder {
         val binding = ItemCountryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ViewHolder(binding)
+        return CountryViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val model = getItem(position)
-        val binding = holder.binding
+    override fun onBindViewHolder(holder: CountryViewHolder, position: Int) {
+        val model = countryList[position]
+        val context = holder.binding.root.context
 
-        binding.cName.text = model.countryName
-        binding.dName.text = model.countryRegion
+        with(holder.binding) {
+            cName.text = model.countryName
+            dName.text = model.countryRegion
 
-        binding.item.setOnClickListener {
-            val action =
-                DashboardFragmentDirections.actionDashboardFragmentToDetailFragment(model.uuid)
-            Navigation.findNavController(it).navigate(action)
+            item.setOnClickListener { view ->
+                val action =
+                    DashboardFragmentDirections.actionDashboardFragmentToDetailFragment(model.uuid)
+                Navigation.findNavController(view).navigate(action)
+            }
+
+            imageName.downloadFromUrl(
+                false, model.imageURL, placeholderProgressBar(context)
+            )
+
+            imageBlur.downloadFromUrl(
+                true, model.imageURL, placeholderProgressBar(context)
+            )
         }
-
-        binding.imageName.downloadFromUrl(
-            false, model.imageURL, placeholderProgressBar(binding.item.context)
-        )
-
-        binding.imageBlur.downloadFromUrl(
-            true, model.imageURL, placeholderProgressBar(binding.item.context)
-        )
     }
 
-    class ViewHolder(val binding: ItemCountryBinding) : RecyclerView.ViewHolder(binding.root)
+    override fun getItemCount(): Int = countryList.size
 
-    class CountryDiffCallback : DiffUtil.ItemCallback<Country>() {
-        override fun areItemsTheSame(oldItem: Country, newItem: Country): Boolean {
-            return oldItem.uuid == newItem.uuid
-        }
+    fun updateCountryList(newCountryList: List<Country>) {
+        val diffCallback = CountryDiffCallback(countryList, newCountryList)
+        val diffResult = DiffUtil.calculateDiff(diffCallback)
 
-        override fun areContentsTheSame(oldItem: Country, newItem: Country): Boolean {
-            return oldItem == newItem
-        }
+        countryList.clear()
+        countryList.addAll(newCountryList)
+        diffResult.dispatchUpdatesTo(this)
+    }
+}
+
+class CountryViewHolder(val binding: ItemCountryBinding) : RecyclerView.ViewHolder(binding.root)
+
+class CountryDiffCallback(
+    private val oldList: List<Country>, private val newList: List<Country>
+) : DiffUtil.Callback() {
+    override fun getOldListSize(): Int = oldList.size
+    override fun getNewListSize(): Int = newList.size
+
+    override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+        return oldList[oldItemPosition].uuid == newList[newItemPosition].uuid
+    }
+
+    override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+        return oldList[oldItemPosition] == newList[newItemPosition]
     }
 }

@@ -1,13 +1,11 @@
 package com.littleapp.countries.activity
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.littleapp.countries.databinding.ActivitySplashBinding
-import com.littleapp.countries.utils.CLASS
 import com.littleapp.countries.utils.THEME
-import com.littleapp.countries.utils.VOID
+import com.littleapp.countries.utils.launchDelayed
+import com.littleapp.countries.utils.openActivity
 
 class SplashActivity : AppCompatActivity() {
 
@@ -19,12 +17,9 @@ class SplashActivity : AppCompatActivity() {
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
 
-        Handler(Looper.getMainLooper()).postDelayed({ launch() }, TIME_PER_MILLIS.toLong())
-    }
-
-    private fun launch() {
-        VOID.Intent1(this, CLASS.MAIN)
-        finish()
+        launchDelayed(TIME_PER_MILLIS.toLong()) {
+            openActivity(MainActivity::class.java, finish = true)
+        }
     }
 
     override fun onDestroy() {

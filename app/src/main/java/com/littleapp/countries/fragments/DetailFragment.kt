@@ -8,15 +8,14 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.littleapp.countries.databinding.FragmentDetailBinding
 import com.littleapp.countries.utils.DATA
-import com.littleapp.countries.utils.VOID.downloadFromUrl
-import com.littleapp.countries.utils.VOID.placeholderProgressBar
+import com.littleapp.countries.utils.downloadFromUrl
+import com.littleapp.countries.utils.placeholderProgressBar
 import com.littleapp.countries.viewModel.DetailViewModel
 
 class DetailFragment : Fragment() {
 
     private var _binding: FragmentDetailBinding? = null
     private val binding get() = _binding!!
-
     private lateinit var viewModel: DetailViewModel
     private var countryUuid = 0
 
@@ -38,7 +37,7 @@ class DetailFragment : Fragment() {
         viewModel = ViewModelProvider(this)[DetailViewModel::class.java]
         viewModel.getDataFromRoom(countryUuid)
 
-        binding.toolbar.nameSpace.text = DATA.Country_details
+        binding.toolbar.nameSpace.text = DATA.COUNTRY_DETAILS
 
         observeLiveData()
     }
@@ -46,17 +45,20 @@ class DetailFragment : Fragment() {
     private fun observeLiveData() {
         viewModel.countryLiveData.observe(viewLifecycleOwner) { country ->
             country?.let {
-                binding.cName.text = country.countryName
-                binding.capName.text = country.countryCapital
-                binding.regionName.text = country.countryRegion
-                binding.langName.text = country.countryLanguage
-                binding.currencyName.text = country.countryCurrency
-                binding.detailImg.downloadFromUrl(
-                    false, country.imageURL, placeholderProgressBar(requireContext())
-                )
-                binding.detailImgBlur.downloadFromUrl(
-                    true, country.imageURL, placeholderProgressBar(requireContext())
-                )
+                with(binding) {
+                    cName.text = country.countryName
+                    capName.text = country.countryCapital
+                    regionName.text = country.countryRegion
+                    langName.text = country.countryLanguage
+                    currencyName.text = country.countryCurrency
+
+                    detailImg.downloadFromUrl(
+                        false, country.imageURL, placeholderProgressBar(requireContext())
+                    )
+                    detailImgBlur.downloadFromUrl(
+                        true, country.imageURL, placeholderProgressBar(requireContext())
+                    )
+                }
             }
         }
     }

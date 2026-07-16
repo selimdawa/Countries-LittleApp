@@ -51,8 +51,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.material)
     //Image
-    implementation(libs.glide)                          //Glide Image
-    implementation(libs.glide.transformations)                            //Glide Blur
+    implementation(libs.coil)                            //Coil Image
     //Lifecycle
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.livedata.ktx)
