@@ -1,9 +1,10 @@
-<h1 align="center">Countries - Little App</h1>
+﻿<h1 align="center">Countries - Little App</h1>
 
 <p align="center">
  <a><img alt="Min SDK" src="https://img.shields.io/badge/Min SDK-24-020290?logo=android&logoColor=white"/></a>
  <a><img alt="Target SDK" src="https://img.shields.io/badge/Target SDK-37-0EB265?logo=android&logoColor=0EB265"/></a>
  <a href="https://kotlinlang.org"><img alt="Kotlin" src="https://img.shields.io/badge/Kotlin-2.4.0-blue?logo=kotlin&logoColor=white"/></a>
+  <a href="https://opensource.org/licenses/MIT"><img alt="License" src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square"/></a>
 </p>
 
 ## Day Mode
@@ -17,3 +18,10 @@ One | Two | Three
 ![](https://blogger.googleusercontent.com/img/a/AVvXsEiWeuyJnKtBRW0cTgVzKVbly6EXjaIVt08jrffYLFx96wb3HW3k6Nj3TxZoCljxRI4P5K12v5BPRcXB6f5nrPszx3u4BiAgQbXLdgRpwCJMQirauVWNmd-ozfCsIPk6l6zRifMFQ90IZSUrdR2NnFcAopgWyHGW8eNCWReHticXpb4OVwaGsxpWr2EUsQ) | ![](https://blogger.googleusercontent.com/img/a/AVvXsEg38iLq7T9VI4AA6LRfiJwlobNYG0UUtUoyTXt6elKMjdSHMsiUHXtwY8JlrBCJy7y4iEU9Jpb1pC_ahhAwwQShoVnwxx0PFe6wUDGjI3am-45nL0hlH96usuuiRWsUZ073XKK8cN1eFbaEZbowLNJWMkIZQ7-MPsnpU8IHYDp9iUYOR3dvWf1K-GM1cg) | ![](https://blogger.googleusercontent.com/img/a/AVvXsEjjjRbOqoYDhXF_nkKLdht875rLOrKQfy5mC7458UtK7QR9B3h0sVAlc1FHrpCFO15XYHPQXxm3tg19fkgc6qpExJ58uVm-R2aSAuRKJf1MDgd5JpC3Mpm_aC1Yia1sgSdYm2OEzDOPI_sgxXO7iFR66WSZNvcT1KbnlzCVrQ7qAq6n9WL5_4lvA-hjUg) | 
 
 - [Simple Advanced Apps - Kotlin](https://github.com/selimdawa/SimpleAdvancedAppsKotlin/)
+
+
+---
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
