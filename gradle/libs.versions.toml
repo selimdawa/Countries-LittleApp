@@ -1,4 +1,4 @@
-﻿[versions]
+[versions]
 agp = "9.3.2"
 coreKtx = "1.19.0"
 coil = "2.7.0"
@@ -8,6 +8,7 @@ espressoCore = "3.7.0"
 appcompat = "1.8.0"
 kotlinxCoroutinesCore = "1.11.0"
 kotlinxCoroutinesAndroid = "1.11.0"
+activityKtx = "1.13.0"
 lifecycleViewmodelKtx = "2.11.0"
 material = "1.14.0"
 constraintlayout = "2.2.1"
@@ -33,6 +34,7 @@ coil = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activityKtx" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
@@ -53,6 +55,3 @@ android-application = { id = "com.android.application", version.ref = "agp" }
 navigation-safeargs-kotlin = { id = "androidx.navigation.safeargs.kotlin", version.ref = "navigation" }
 google-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 dagger-hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
-
-
-

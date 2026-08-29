@@ -40,6 +40,7 @@ android {
 
 dependencies {
     implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.preference.ktx)                          //Shared Preference
     testImplementation(libs.junit)
